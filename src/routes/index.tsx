@@ -1,4 +1,11 @@
-import { MainLayout, ProductPage } from "@/constants/lazy-load";
+import {
+  CartPage,
+  MainLayout,
+  OrderInfoPafe,
+  OrderSuccessPage,
+  ProductPage,
+} from "@/constants/lazy-load";
+import OrderSuccessDetail from "@/features/order-success/components/order-success-detail";
 import { createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -9,6 +16,21 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <ProductPage />,
+      },
+
+      {
+        path: "cart",
+        element: <CartPage />,
+      },
+
+      {
+        path: "order-information",
+        element: <OrderInfoPafe />,
+      },
+
+      {
+        path: "order-success",
+        element: <OrderSuccessPage />,
       },
     ],
   },

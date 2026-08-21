@@ -25,7 +25,7 @@ const ProductDetailLeft = ({
 }: ProductDetailLeftProps) => {
   return (
     <div className="w-4/12 flex flex-col  min-h-150">
-      <div className="flex-1 flex flex-col gap-y-4">
+      <div className="flex-1 flex flex-col gap-y-4 mt-8">
         <h2 className="font-proxima text-secondary-brand font-bold text-[48px]">
           {productName}
         </h2>
