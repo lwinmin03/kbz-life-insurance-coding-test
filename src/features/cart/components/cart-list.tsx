@@ -9,16 +9,18 @@ const CartList = () => {
   const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
-    <div className="w-full flex flex-col gap-y-8">
+    <div className="w-full lg:flex-1 flex flex-col gap-y-6 md:gap-y-8">
       <div className="flex items-baseline gap-x-4">
-        <h3 className="font-bold text-secondary-brand text-[32px]">Cart</h3>
-        <span className="text-[20px] font-semibold text-cool-grey uppercase">
+        <h3 className="font-bold text-secondary-brand text-2xl md:text-[32px]">
+          Cart
+        </h3>
+        <span className="text-lg md:text-[20px] font-semibold text-cool-grey uppercase">
           {totalItems} {totalItems === 1 ? "ITEM" : "ITEMS"}
         </span>
       </div>
 
       {cart.length === 0 ? (
-        <div className="flex flex-col items-center justify-center py-12 border border-dashed border-[#D1D1D8] rounded-md text-center">
+        <div className="flex flex-col items-center justify-center py-12 border border-dashed border-[#D1D1D8] rounded-md text-center px-4">
           <ShoppingBag className="size-12 text-cool-grey mb-4" />
           <h4 className="text-xl font-semibold text-secondary-brand font-poppins">
             Your cart is empty
@@ -44,9 +46,9 @@ const CartList = () => {
             ))}
           </div>
 
-          <div className="w-fit flex items-center gap-x-4 rounded-[1px] p-4 border border-primary-brand bg-primary-brand/10">
+          <div className="w-full sm:w-fit flex items-center gap-x-4 rounded-[1px] p-4 border border-primary-brand bg-primary-brand/10">
             <Percent className="text-primary-brand shrink-0" />
-            <div className="text-base font-normal font-proxima">
+            <div className="text-sm md:text-base font-normal font-proxima">
               10% Instant Discount with Federal Bank Debit Cards on a min spend
               of $150. TCA
             </div>

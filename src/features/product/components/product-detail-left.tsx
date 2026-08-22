@@ -32,9 +32,9 @@ const ProductDetailLeft = ({
   );
 
   return (
-    <div className="w-full lg:w-4/12 flex flex-col min-h-150">
-      <div className="flex-1 flex flex-col gap-y-4 mt-8">
-        <h2 className="font-proxima text-secondary-brand font-bold text-4xl lg:text-[48px] leading-tight">
+    <div className="w-full lg:w-5/12 flex flex-col min-h-150">
+      <div className="flex-1 flex flex-col gap-y-4 mt-4 lg:mt-8">
+        <h2 className="font-proxima text-secondary-brand font-bold text-3xl md:text-4xl lg:text-[48px] leading-tight">
           {name}
         </h2>
 
@@ -54,8 +54,8 @@ const ProductDetailLeft = ({
           {desc}
         </p>
 
-        <div className="flex items-center gap-x-3 pt-2">
-          <div className="border border-cool-grey px-4 py-3 rounded-sm flex items-center justify-between w-40 h-full">
+        <div className="flex flex-wrap sm:flex-nowrap items-center gap-3 pt-2">
+          <div className="border border-cool-grey px-4 py-3 rounded-sm flex items-center justify-between w-full sm:w-40 h-full">
             <button
               disabled={selectionQuantity <= 1}
               onClick={decrementQuantity}
@@ -80,17 +80,16 @@ const ProductDetailLeft = ({
               <Plus size={16} />
             </button>
           </div>
-
           <button
             onClick={onAddToCart}
             type="button"
-            className="w-40 px-8 py-3.5 bg-primary-brand cursor-pointer rounded-sm text-white font-poppins font-semibold text-base hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-primary-brand focus:ring-offset-2"
+            className="w-full sm:w-auto px-6 lg:px-8 py-3.5 whitespace-nowrap bg-primary-brand cursor-pointer rounded-sm text-white font-poppins font-semibold text-base hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-primary-brand focus:ring-offset-2"
           >
             Add To Cart
           </button>
         </div>
 
-        <div className="flex flex-wrap items-center gap-x-2 text-secondary-brand font-normal text-sm pt-2">
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-secondary-brand font-normal text-sm pt-2">
           <span>Free 3-5 day shipping</span>
           <span className="text-xs">&bull;</span>
           <span>Tool-free assembly</span>
@@ -99,7 +98,7 @@ const ProductDetailLeft = ({
         </div>
       </div>
 
-      <div className="flex justify-between items-center border-t border-cool-grey/30 pt-6 mt-auto">
+      <div className="flex justify-between items-center border-t border-cool-grey/30 pt-6 mt-8 lg:mt-auto">
         <button
           type="button"
           className="flex text-primary-brand gap-x-3.5 items-center cursor-pointer hover:opacity-80 transition-opacity font-poppins text-sm font-medium"

@@ -21,11 +21,10 @@ const ProductDetailContainer = () => {
   if (!product) return null;
 
   return (
-    <div className="mx-auto h-screen flex items-center justify-between">
+    <div className="container mx-auto min-h-screen flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:gap-12 px-4 md:px-8 py-8 lg:py-0">
       <ProductDetailLeft
         onAddToCart={() => {
           addToCart();
-
           goTo("/cart");
         }}
         name={product.name}

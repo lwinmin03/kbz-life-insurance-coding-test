@@ -11,11 +11,12 @@ const OrderSuccessDetail = () => {
   }
 
   return (
-    <div className="w-full flex flex-col gap-y-6">
-      <div className="bg-primary-brand/13 py-4 px-5 mt-8 text-primary-brand text-2xl font-poppins font-medium rounded-[7px]">
-        Order create successfully!
+    <div className="container mx-auto w-full flex flex-col gap-y-6 px-4 md:px-8 py-8 lg:py-12">
+      <div className="bg-primary-brand/13 py-4 px-5 text-primary-brand text-xl md:text-2xl font-poppins font-medium rounded-[7px]">
+        Order created successfully!
       </div>
-      <div className="flex mt-4 w-full items-start justify-center">
+
+      <div className="flex flex-col lg:flex-row mt-4 w-full items-start justify-between gap-8 lg:gap-12">
         <OrderInfoSection
           address={order?.address}
           email={order?.email}

@@ -7,11 +7,8 @@ export const OrderInfoSchema = z.object({
 phoneNumber: z
   .string()
   .trim()
-  .regex(
-    /^\+?[0-9\s\-()]{9,12}$/,
-    "Invalid phone number format"
-  )
-  .or(z.literal("")), 
+  .regex(/^\+?[0-9\s\-()]{9,12}$/, "Invalid phone number format")
+  ,
   address: z.string().min(1, "Address is required"),
   
 

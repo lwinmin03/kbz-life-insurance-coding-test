@@ -9,11 +9,11 @@ interface OrderInfoColProps {
 
 const OrderInfoCol = ({ name, value, className = "" }: OrderInfoColProps) => {
   return (
-    <div className={`flex flex-col gap-y-1 ${className}`}>
-      <span className="font-poppins text-black/50 text-xl  font-medium">
+    <div className={`flex flex-col gap-y-1 w-full ${className}`}>
+      <span className="font-poppins text-black/50 text-base md:text-lg font-medium">
         {name}
       </span>
-      <span className="font-poppins w-5xl text-black text-xl font-medium line-clamp-2 overflow-hidden text-ellipsis  wrap-break-word">
+      <span className="font-poppins w-full text-black text-lg md:text-xl font-medium line-clamp-2 overflow-hidden text-ellipsis break-words">
         {value}
       </span>
     </div>
@@ -28,17 +28,17 @@ const OrderInfoSection = ({
   email,
 }: OrderInfoFormValues) => {
   return (
-    <div className="w-full ">
+    <div className="w-full lg:flex-1">
       <h3 className="text-2xl md:text-[28px] font-semibold font-poppins text-black">
         Order Information
       </h3>
 
-      <div className="w-10/12 mt-2 h-px bg-[#E8E8EB]"></div>
+      <div className="w-full md:w-10/12 mt-2 h-px bg-[#E8E8EB]"></div>
 
-      <div className="mt-6 flex flex-col gap-y-10 justify-between w-full">
+      <div className="mt-6 flex flex-col gap-y-8 md:gap-y-10 justify-between w-full">
         <OrderInfoCol name="Order Number" value="008834TVU" />
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-19">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
           <OrderInfoCol name="Name" value={name} />
           <OrderInfoCol name="Email Address" value={email} />
           <OrderInfoCol
@@ -47,7 +47,7 @@ const OrderInfoSection = ({
           />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-19">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
           <OrderInfoCol name="Shipment" value="Free (Yangon)" />
           <OrderInfoCol
             name="Payment Method"

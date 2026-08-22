@@ -31,7 +31,7 @@ const OrderInfoContainer = () => {
       onSubmit={handleSubmit}
       schema={OrderInfoSchema}
     >
-      <div className="flex justify-between items-start h-full pt-12  gap-x-8">
+      <div className="container mx-auto flex flex-col lg:flex-row justify-between items-start pt-8 lg:pt-12 gap-8 lg:gap-12 px-4 md:px-8 pb-12">
         <OrderInfoForm />
         <OrderSummary
           label="Buy"

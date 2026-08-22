@@ -26,7 +26,7 @@ const OrderSummary = ({
   };
 
   return (
-    <div className="min-w-95 p-8 h-fit border border-[#D1D1D8]">
+    <div className="w-full lg:w-96 lg:min-w-96 p-6 md:p-8 h-fit border border-[#D1D1D8]">
       <h2 className="font-proxima text-secondary-brand text-2xl font-bold">
         Order Summary
       </h2>
@@ -56,7 +56,7 @@ const OrderSummary = ({
       </div>
 
       <div className="flex flex-col gap-y-6 mt-4">
-        <div className="flex text-secondary-brand  items-center justify-between">
+        <div className="flex text-secondary-brand items-center justify-between">
           <span className="font-proxima text-base font-normal">Total</span>
           <span className="font-semibold font-poppins">$288.23</span>
         </div>
