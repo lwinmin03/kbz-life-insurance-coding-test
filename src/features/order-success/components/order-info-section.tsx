@@ -28,17 +28,17 @@ const OrderInfoSection = ({
   email,
 }: OrderInfoFormValues) => {
   return (
-    <div className="w-full lg:flex-1">
-      <h3 className="text-2xl md:text-[28px] font-semibold font-poppins text-black">
+    <div className="w-full">
+      <h3 className="text-2xl md:text-[28px] xl:text-3xl font-semibold font-poppins text-black">
         Order Information
       </h3>
 
-      <div className="w-full md:w-10/12 mt-2 h-px bg-[#E8E8EB]"></div>
+      <div className="w-full md:w-10/12 xl:w-full mt-2 h-px bg-[#E8E8EB]"></div>
 
-      <div className="mt-6 flex flex-col gap-y-8 md:gap-y-10 justify-between w-full">
+      <div className="mt-6 flex flex-col gap-y-8 md:gap-y-10 xl:gap-y-12 justify-between w-full">
         <OrderInfoCol name="Order Number" value="008834TVU" />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-6 md:gap-8 xl:gap-10">
           <OrderInfoCol name="Name" value={name} />
           <OrderInfoCol name="Email Address" value={email} />
           <OrderInfoCol
@@ -47,7 +47,7 @@ const OrderInfoSection = ({
           />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-6 md:gap-8 xl:gap-10">
           <OrderInfoCol name="Shipment" value="Free (Yangon)" />
           <OrderInfoCol
             name="Payment Method"
