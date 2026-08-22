@@ -14,6 +14,7 @@ interface ProductDetailLeftProps {
   rating: number;
   desc: string;
   totalRatingUser: number;
+  onAddToCart: () => void;
 }
 
 const ProductDetailLeft = ({
@@ -22,6 +23,7 @@ const ProductDetailLeft = ({
   productName,
   rating,
   totalRatingUser,
+  onAddToCart,
 }: ProductDetailLeftProps) => {
   return (
     <div className="w-4/12 flex flex-col  min-h-150">
@@ -65,6 +67,7 @@ const ProductDetailLeft = ({
           </div>
 
           <button
+            onClick={onAddToCart}
             type="button"
             className="px-10 py-4.5 bg-primary-brand cursor-pointer rounded-sm text-white font-poppins font-semibold text-base"
           >

@@ -3,10 +3,10 @@ import { AppForm } from "@/components/core/app-form";
 import { OrderInfoSchema, type OrderInfoFormValues } from "../schema/schema";
 import OrderInfoForm from "../components/order-info-form";
 import OrderSummary from "@/features/cart/components/order-summary";
-import { useNavigate } from "react-router-dom";
+import { useAppNavigation } from "@/hooks/use-app-navigation";
 
 const OrderInfoContainer = () => {
-  const navigate = useNavigate();
+  const { goTo } = useAppNavigation();
   const defaultValues: OrderInfoFormValues = {
     name: "",
     email: "",
@@ -17,9 +17,7 @@ const OrderInfoContainer = () => {
   };
 
   const handleSubmit = (data: OrderInfoFormValues) => {
-    console.log("Submitted Order:", data);
-
-    navigate("/order-success", { state: { order: data } });
+    goTo("/order-success", { state: { order: data } });
   };
 
   return (

@@ -6,6 +6,7 @@ type OrderSummaryProps = {
   label?: string;
   onApplyCoupon?: (code: string) => void;
   completeOrder?: boolean;
+  onClick?: () => void;
 };
 
 const OrderSummary = ({
@@ -13,11 +14,12 @@ const OrderSummary = ({
   type = "submit",
   onApplyCoupon,
   completeOrder = false,
+  onClick,
 }: OrderSummaryProps) => {
   const [couponCode, setCouponCode] = React.useState("");
 
   const handleCouponSubmit = (e: React.MouseEvent | React.KeyboardEvent) => {
-    e.preventDefault(); // Prevents main form from submitting
+    e.preventDefault();
     if (couponCode.trim() && onApplyCoupon) {
       onApplyCoupon(couponCode);
     }
@@ -77,7 +79,7 @@ const OrderSummary = ({
               className="border-none outline-none w-full bg-transparent text-sm"
             />
             <button
-              type="button" // Must be type="button" to prevent main form submit
+              type="button"
               onClick={handleCouponSubmit}
               className="cursor-pointer text-secondary-brand hover:text-primary-brand shrink-0 transition-colors"
             >
@@ -88,6 +90,7 @@ const OrderSummary = ({
 
         <button
           type={type}
+          onClick={onClick}
           className="bg-primary-brand cursor-pointer py-3 rounded-sm text-base font-poppins font-semibold w-full text-white hover:opacity-90 transition-opacity"
         >
           {label}
