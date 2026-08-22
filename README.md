@@ -1,75 +1,70 @@
-# React + TypeScript + Vite
+# Front-End Coding Test — Cozy® E-Commerce Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A  e-commerce web application built with **React**, **TypeScript**, **Tailwind CSS**, and **Zustand** as part of the technical assessment.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Getting Started
 
-## React Compiler
+Follow these instructions to set up and run the project locally.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Prerequisites
 
-## Expanding the ESLint configuration
+Ensure you have **Node.js** (`v20.0.0` or higher) and **pnpm** installed on your machine:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+```bash
+# Install pnpm globally if you don't have it yet
+npm install -g pnpm
+```
+### 🛠️ Installation & Setup
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+```bash
+git clone <YOUR_REPOSITORY_URL>
+cd <YOUR_PROJECT_DIRECTORY_NAME>
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+# Install dependencies:
+pnpm install
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Start the development server:
+pnpm dev
 
+Open your browser and navigate to http://localhost:5173 (or the URL shown in your terminal).
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+🧰 Tech Stack & Libraries
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+    Framework: React 18 + Vite
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+    Language: TypeScript
 
-```
+    Package Manager: pnpm
+
+    State Management: Zustand (Global Cart & Product State)
+
+    Styling: Tailwind CSS
+
+    Icons: Lucide React & React Icons
+
+
+## 📂 Project Structure
+
+```text
+src/
+├── assets/          # Static media, icons, and image assets
+├── components/      # Shared, reusable UI components (Navbar, UI elements)
+├── constants/       # Global constants, config values, and static data
+├── hooks/           # Reusable custom React hooks
+├── lib/             # Helper functions, formatters, and utility libraries
+├── routes/          # App routing configuration and page wrappers
+├── store/           # Zustand global state stores
+├── features/        # Modular feature domains
+│   ├── cart/
+│   │   ├── api/         # Cart API endpoints and fetchers
+│   │   ├── components/  # Presentational UI components (e.g., CartItem)
+│   │   └── containers/  # Stateful layout containers (e.g., CartList)
+│   └── product/
+│       ├── api/         # Product API endpoints and TypeScript types
+│       ├── components/  # Presentational UI components (e.g., ThumbnailList)
+│       └── containers/  # Stateful layout containers (e.g., ProductDetail)
+├── App.tsx          # Root application component
+└── main.tsx         # Application entry point
