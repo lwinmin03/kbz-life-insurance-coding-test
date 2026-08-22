@@ -1,5 +1,5 @@
-import CartList from "./cart-list";
-import OrderSummary from "./order-summary";
+import CartList from "../components/cart-list";
+import OrderSummary from "../components/order-summary";
 import { useAppNavigation } from "@/hooks/use-app-navigation";
 
 const CartDetailContainer = () => {

@@ -5,7 +5,7 @@ import {
   OrderSuccessPage,
   ProductPage,
 } from "@/constants/lazy-load";
-import OrderSuccessDetail from "@/features/order-success/components/order-success-detail";
+
 import { createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([

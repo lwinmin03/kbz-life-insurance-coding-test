@@ -1,5 +1,8 @@
+import { useAppNavigation } from "@/hooks/use-app-navigation";
+import { useProductStore } from "@/store/product-store";
 import { ShoppingCart } from "lucide-react";
 import { CgSearch } from "react-icons/cg";
+
 import { TbMenu4 } from "react-icons/tb";
 import { NavLink } from "react-router-dom";
 
@@ -12,11 +15,19 @@ const NAV_LINKS = [
 ] as const;
 
 const Navbar = () => {
+  const { goTo } = useAppNavigation();
+  const cartItemsCount = useProductStore((state) =>
+    state.cart.reduce((total, item) => total + item.quantity, 0),
+  );
+
   return (
     <header className="flex h-16 w-full items-center justify-between border-b border-[#D1D1D8] px-6 text-secondary-brand">
-      <h2 className="text-2xl font-cambay font-bold text-secondary-brand">
+      <button
+        onClick={() => goTo("/")}
+        className="text-2xl cursor-pointer font-cambay font-bold text-secondary-brand"
+      >
         Cozy®
-      </h2>
+      </button>
 
       <nav className="flex items-center font-poppins gap-x-11">
         {NAV_LINKS.map((link) => (
@@ -40,13 +51,19 @@ const Navbar = () => {
           </button>
         </div>
 
-        <div className="flex h-full  items-center border-l border-[#D1D1D8] pl-6">
+        <div className="flex h-full items-center border-l border-[#D1D1D8] pl-6">
           <button
             type="button"
-            className="cursor-pointer"
-            aria-label="Shopping Cart"
+            className="relative cursor-pointer p-1 focus:outline-none"
+            aria-label={`Shopping Cart, ${cartItemsCount} items`}
           >
             <ShoppingCart size={24} />
+
+            {cartItemsCount > 0 && (
+              <span className="absolute -top-2 -right-1.5 flex min-w-5 h-5 items-center justify-center rounded-full bg-primary-brand px-1.5 text-xs font-normal text-white font-proxima leading-none">
+                {cartItemsCount}
+              </span>
+            )}
           </button>
         </div>
       </div>

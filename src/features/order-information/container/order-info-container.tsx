@@ -4,9 +4,11 @@ import { OrderInfoSchema, type OrderInfoFormValues } from "../schema/schema";
 import OrderInfoForm from "../components/order-info-form";
 import OrderSummary from "@/features/cart/components/order-summary";
 import { useAppNavigation } from "@/hooks/use-app-navigation";
+import { useProductStore } from "@/store/product-store";
 
 const OrderInfoContainer = () => {
   const { goTo } = useAppNavigation();
+  const clearCart = useProductStore((state) => state.clearCart);
   const defaultValues: OrderInfoFormValues = {
     name: "",
     email: "",
@@ -18,6 +20,7 @@ const OrderInfoContainer = () => {
 
   const handleSubmit = (data: OrderInfoFormValues) => {
     goTo("/order-success", { state: { order: data } });
+    clearCart();
   };
 
   return (

@@ -8,7 +8,7 @@ phoneNumber: z
   .string()
   .trim()
   .regex(
-    /^\+?[0-9\s\-()]{7,15}$/,
+    /^\+?[0-9\s\-()]{9,12}$/,
     "Invalid phone number format"
   )
   .or(z.literal("")), 

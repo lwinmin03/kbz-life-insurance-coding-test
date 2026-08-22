@@ -1,39 +1,8 @@
 import MainProductImage from "@/assets/product/Meryl_Lounge_Chair_Teal_3 1.png";
-import {
-  productImageFive,
-  productImageFour,
-  productImageOne,
-  productImageThree,
-  productImageTwo,
-} from "@/assets/product";
-const thumbnails = [
-  {
-    id: "P-01",
-    img: MainProductImage,
-  },
+import type { Product } from "../api/api";
+interface ProductDetailRightProps extends Pick<Product, "thumbnails"> {}
 
-  {
-    id: "P-02",
-    img: productImageTwo,
-  },
-
-  {
-    id: "P-03",
-    img: productImageThree,
-  },
-
-  {
-    id: "P-04",
-    img: productImageFour,
-  },
-
-  {
-    id: "P-05",
-    img: productImageFive,
-  },
-];
-
-const ProductDetailRight = () => {
+const ProductDetailRight = ({ thumbnails }: ProductDetailRightProps) => {
   return (
     <div className="min-h-160 flex flex-col gap-3.5">
       <img
@@ -56,14 +25,14 @@ const ProductDetailRight = () => {
         {/* thumbnails */}
         <div className="flex w-full items-center justify-start gap-x-6">
           {thumbnails.map((item) => {
-            const isActive = item?.id === "P-01";
+            const isActive = item?.id === "T-01";
             return (
               <div
                 className={`size-26 flex justify-center items-center cursor-pointer  rounded-[5px] border-2 ${isActive ? "border-primary-brand" : "border-cool-grey"} `}
               >
                 <img
                   key={item.id}
-                  src={item.img}
+                  src={item.url}
                   className="size-22  object-contain"
                   alt={`Thumbnail ${item.id}`}
                 />

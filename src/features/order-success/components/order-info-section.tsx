@@ -1,5 +1,5 @@
 import type { OrderInfoFormValues } from "@/features/order-information/schema/schema";
-import React from "react";
+import { formatPhoneNumber } from "@/lib";
 
 interface OrderInfoColProps {
   name: string;
@@ -36,17 +36,17 @@ const OrderInfoSection = ({
       <div className="w-10/12 mt-2 h-px bg-[#E8E8EB]"></div>
 
       <div className="mt-6 flex flex-col gap-y-10 justify-between w-full">
-        {/* Order Number */}
         <OrderInfoCol name="Order Number" value="008834TVU" />
 
-        {/* 3-Column Alignment Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-19">
           <OrderInfoCol name="Name" value={name} />
           <OrderInfoCol name="Email Address" value={email} />
-          <OrderInfoCol name="Phone Number" value={phoneNumber} />
+          <OrderInfoCol
+            name="Phone Number"
+            value={formatPhoneNumber(phoneNumber)}
+          />
         </div>
 
-        {/* 2-Column Alignment Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-19">
           <OrderInfoCol name="Shipment" value="Free (Yangon)" />
           <OrderInfoCol
@@ -55,7 +55,6 @@ const OrderInfoSection = ({
           />
         </div>
 
-        {/* Address Row */}
         <div className="w-full">
           <OrderInfoCol name="Address" value={address} />
         </div>

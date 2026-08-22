@@ -39,7 +39,7 @@ const OrderSummary = ({
 
         <div className="flex items-center justify-between text-secondary-brand text-base font-normal">
           <span>Discount</span>
-          <span className="text-green-600">-$31.00</span>
+          <span className="">$31.00</span>
         </div>
 
         <div className="flex items-center justify-between text-secondary-brand text-base font-normal">
@@ -56,14 +56,16 @@ const OrderSummary = ({
       </div>
 
       <div className="flex flex-col gap-y-6 mt-4">
-        <div className="flex text-secondary-brand text-base font-bold items-center justify-between">
-          <span>Total</span>
-          <span>$288.23</span>
+        <div className="flex text-secondary-brand  items-center justify-between">
+          <span className="font-proxima text-base font-normal">Total</span>
+          <span className="font-semibold font-poppins">$288.23</span>
         </div>
 
         <div className="flex text-secondary-brand text-base font-normal items-center justify-between">
-          <span>Estimated Delivery by</span>
-          <span>01 Feb, 2023</span>
+          <span className="font-proxima text-base font-normal">
+            Estimated Delivery by
+          </span>
+          <span className="font-semibold font-poppins">01 Feb, 2023</span>
         </div>
 
         {!completeOrder && (

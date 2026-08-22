@@ -1,13 +1,13 @@
-import ImgOne from './img1.png';
-import ImgTwo from './img2.png';
-import ImgThree from './img3.png';
-import ImgFour from './img4.png';
-import ImgFive from './img5.png';
+import ImgOne from './img1.jpeg';
+import ImgTwo from './img2.jpeg';
+import ImgThree from './img3.jpeg';
+import ImgFour from './img4.jpeg';
+import ImgFive from './img5.jpeg';
 import Product from './Meryl_Lounge_Chair_Teal_3 1.png';
 
 
 
-// Re-exporting individual assets if direct named imports are required
+
 export {
   ImgOne as productImageOne,
   ImgTwo as productImageTwo,

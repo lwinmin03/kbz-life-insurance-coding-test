@@ -1,9 +1,9 @@
-import ProductDetail from "./components/product-detail";
+import ProductDetailContainer from "./container/product-detail-container";
 
 const page = () => {
   return (
     <div className="relative">
-      <ProductDetail />
+      <ProductDetailContainer />
     </div>
   );
 };

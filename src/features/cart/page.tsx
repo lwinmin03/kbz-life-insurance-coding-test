@@ -1,4 +1,4 @@
-import CartDetailContainer from "./components/cart-detail-container";
+import CartDetailContainer from "./container/cart-detail-container";
 
 const page = () => {
   return <CartDetailContainer />;

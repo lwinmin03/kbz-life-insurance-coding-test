@@ -24,7 +24,7 @@ const OrderSuccessDetail = () => {
           shiiping={order?.shiiping}
           name={order?.name}
         />
-        <OrderSummary completeOrder={true} />
+        <OrderSummary label="Save Gallery" completeOrder={true} />
       </div>
     </div>
   );
